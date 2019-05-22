@@ -6,7 +6,7 @@
 #    By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/13 16:44:11 by tferrari          #+#    #+#              #
-#    Updated: 2019/05/15 15:02:34 by tferrari         ###   ########.fr        #
+#    Updated: 2019/05/22 15:28:45 by tferrari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ $(NAME1): $(OBJ_C)
 	@echo "\033[32mexecutable Collen créé\033[0m"
 
 $(OBJ_PATH)%.o: %.s
-	@mkdir $(OBJ_PATH)
+	@mkdir $(OBJ_PATH) 2> /dev/null || true
 	@$(NASM) $(CFLAGS) $< -o $@
 	@echo "Fichier" $< "recompilé."
 
@@ -48,13 +48,13 @@ $(NAME2): $(OBJ_G)
 	@echo "\033[32mexecutable Grace créé\033[0m"
 
 $(OBJ_PATH)%.o: %.s
-	@mkdir $(OBJ_PATH)
+	@mkdir $(OBJ_PATH) 2> /dev/null || true
 	@$(NASM) $(CFLAGS) $< -o $@
 	@echo "Fichier" $< "recompilé."
 
 clean:
-	@rm -fv $(OBJ)
-	@rmdir $(OBJ_PATH)
+	@rm -rf$(OBJ)
+	@rmdir $(OBJ_PATH) 2> /dev/null || true
 	@echo "\033[31mFichier objet de Dr_quine supprimé\033[0m"
 
 fclean: clean
