@@ -6,11 +6,11 @@
 #    By: tferrari <tferrari@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/13 16:44:11 by tferrari          #+#    #+#              #
-#    Updated: 2019/05/22 15:28:45 by tferrari         ###   ########.fr        #
+#    Updated: 2019/06/03 09:57:26 by tferrari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC_C = Collen.s
+SRC_C = Colleen.s
 
 SRC_G = Grace.s
 
@@ -53,7 +53,7 @@ $(OBJ_PATH)%.o: %.s
 	@echo "Fichier" $< "recompilé."
 
 clean:
-	@rm -rf$(OBJ)
+	@rm -rf $(OBJ)
 	@rmdir $(OBJ_PATH) 2> /dev/null || true
 	@echo "\033[31mFichier objet de Dr_quine supprimé\033[0m"
 
